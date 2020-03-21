@@ -1,0 +1,22 @@
+{
+  "name": "js-handwrite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjhyy/js-handwrite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjhyy/js-handwrite/issues"
+  },
+  "homepage": "https://github.com/cjhyy/js-handwrite#readme",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
