@@ -10,24 +10,6 @@ var promises = []
 
 
 
-let tmp = new Promise(r=>{
-    r()
-})
-for (let n in arr){
-    tmp.then(()=>{
-        return new Promise((resolve)=>{
-            setTimeout(()=>{
-                resolve(arr[n])
-            }, 1000)
-        }).then(res=>{
-            console.log(res)
-        })
-    })
-    tmp=tmp.then()
-}
-
-console.log(tmp)
-
 // arr.reduce((p, x) => {
 //     return p.then(() => {
 //       return new Promise(r => {
@@ -36,6 +18,23 @@ console.log(tmp)
 //     })
 //   }, Promise.resolve())
   
+function p(i){
+  return new Promise(r=>{
+        setTimeout(()=>{
+            r(i)
+        },1000)
+    })
+}
+
+function loop(i){
+    if (i>=arr.length) return
+  p(arr[i]).then(res=>{
+      console.log(res)
+      loop(++i)
+  })
+}
+loop(0)
+
 
 // arr.map(async (value) => {
 //   promises.push(new Promise((res) => {
